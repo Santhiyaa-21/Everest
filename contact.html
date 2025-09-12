@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+<link rel="stylesheet" href="style.css">
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="/images/Everest_Traders_logo_Art_Work.png" alt="Logo">
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about1.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="contact-left">
+      <h1>Contact us</h1>
+      <h2>Have a project?</h2>
+
+      <div class="service-options">
+        <button type="button">Design</button>
+        <button type="button">Development</button>
+        <button type="button">Animation</button>
+        <button type="button">Other</button>
+      </div>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <input type="text" placeholder="Your name" required>
+          <input type="email" placeholder="Your email" required>
+        </div>
+        <textarea rows="5" placeholder="Project details"></textarea>
+        <button type="submit">Send request</button>
+      </form>
+    </div>
+
+    <div class="contact-right">
+      <p>
+        Tell us about your vision: which challenges are you facing? What are your goals and expectations? 
+        What would success look like and how much are you planning to spend to get there?
+      </p>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Toggle active service button
+    const buttons = document.querySelectorAll(".service-options button");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+
+    // Handle form submission
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you! Your request has been sent.");
+      this.reset();
+      buttons.forEach(b => b.classList.remove("active"));
+    });
+  </script>
+
+</body>
+</html>
