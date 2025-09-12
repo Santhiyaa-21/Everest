@@ -7,9 +7,9 @@
 
 /* Header Styling */
 header {
-  background-color: #ffffff;
+  background-color: #2F2F2F;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  padding: 15px 30px;
+  padding: 1px 30px;
 }
 
 /* Navigation Bar */
@@ -21,27 +21,31 @@ header {
 
 /* Logo Styling */
 .logo img {
-  height: 45px;   /* adjust logo size */
+  height: 115px;   /* adjust logo size */
   width: auto;
+  size: 250px;
 }
 
-/* Menu Styling */
 .menu {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 45px;
+  justify-content: flex-start; /* Align menu items to the left */
+  margin: 0;
+  padding-right: 100px;
 }
+
 
 .menu li a {
   text-decoration: none;
-  font-size: 16px;
-  color: #333;
+  font-size: 26px;
+  color: #ef7f25;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .menu li a:hover {
-  color: #007bff;
+  color: #ffffff;
 }
 /* Reset */
 * {
@@ -76,6 +80,9 @@ header {
 .banner-text {
   position: relative;
   z-index: 2;
+  font-family: 'Times New Roman', Times, serif;
+  letter-spacing: 1px;
+  font-size: xx-large;
 }
 
 .banner-text h1 {
