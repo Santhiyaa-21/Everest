@@ -767,7 +767,9 @@ header {
       justify-content: space-between;
       align-items: flex-start;
       padding: 80px 60px;
-      background: #111;
+      background: #111111a9;
+      border-radius: 50px;
+      
     }
 
     .contact-left {
@@ -777,12 +779,13 @@ header {
     .contact-left h1 {
       font-size: 50px;
       margin-bottom: 10px;
+      color: white;
     }
 
     .contact-left h2 {
       font-size: 40px;
       font-weight: 300;
-      color: #666;
+      color: #ffffff;
       margin-bottom: 40px;
     }
 
@@ -856,6 +859,7 @@ header {
       margin-top: 30px;
       display: flex;
       gap: 15px;
+      
     }
 
     .social-icons a {
@@ -896,5 +900,323 @@ header {
         font-size: 18px;
       }
     }
+
+    /*Products page*/
+/* ===== Plywood Section ===== */
+.plywood-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.plywood-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+/* ===== Grid Layout ===== */
+.plywood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.plywood-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.plywood-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.plywood-card p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Hover Effect ===== */
+.plywood-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+/* ===== Doors Section ===== */
+.doors-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.doors-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #222;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ===== Grid Layout ===== */
+.doors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.door-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  padding: 15px;
+}
+
+.door-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #ddd; /* Placeholder background */
+  border-radius: 8px;
+}
+
+.door-card p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Hover Effect ===== */
+.door-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+/* ===== Laminate Section ===== */
+.laminate-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.laminate-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ===== Grid Layout (4 per row) ===== */
+.laminate-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 in one row */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.laminate-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.laminate-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #ddd; /* Placeholder background */
+  border-radius: 8px;
+}
+
+.laminate-card p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Hover Effect ===== */
+.laminate-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 900px) {
+  .laminate-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .laminate-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
+/* ===== Product Sections (louvers and fluters // pop fal ceiling) ===== */
+.product-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.product-section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ===== Grid Layout (3 per row) ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.product-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #ddd; /* Placeholder background */
+  border-radius: 8px;
+}
+
+.product-card p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Hover Effect ===== */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
+/* ===== Profiles Section ===== */
+.profile-section {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.profile-section h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #111;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ===== Grid Layout (3x2) ===== */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== Card Styling ===== */
+.profile-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.profile-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #ddd; /* Placeholder */
+  border-radius: 8px;
+}
+
+.profile-card p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ===== Hover Effect ===== */
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 900px) {
+  .profile-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-grid {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
   
 
