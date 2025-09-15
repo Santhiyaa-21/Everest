@@ -3,90 +3,308 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us</title>
-<link rel="stylesheet" href="style.css">
-  <!-- Font Awesome for icons -->
-   <head>
-  <!-- Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
+  <title>Responsive Contact Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding-top: 0;
+    }
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    /* Header */
+    header {
+      background-color: #2F2F2F;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 0 30px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      background: #2F2F2F;
+      backdrop-filter: blur(8px); 
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Logo Styling */
+    .logo img {
+      height: 90px;
+      width: auto;
+    }
+
+    /* Menu Styling */
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      justify-content: flex-start;
+      margin: 0;
+      padding-right: 80px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      font-size: 22px;
+      color: #ef7f25;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .menu li a:hover {
+      color: #ffffff;
+    }
+
+    .contact-container {
+      text-align: center;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      flex-wrap: wrap;
+    }
+
+    input {
+      padding: 14px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 260px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    button {
+      padding: 14px 35px;
+      border: none;
+      border-radius: 20px;
+      background: #00bcd4;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    /* Info section full width */
+    .info-boxes {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 60px 40px;
+      background: #00bcd4;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background: white;
+      color: #333;
+      padding: 30px;
+      border-radius: 14px;
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .box h3 {
+      margin-bottom: 14px;
+      font-size: 1.2rem;
+    }
+
+    .box p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Popup modal */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #fff;
+      padding: 35px;
+      border-radius: 14px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .popup-content h2 {
+      margin-bottom: 12px;
+    }
+
+    .popup-content p {
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .popup-content button {
+      background: #00bcd4;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 20px;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .popup-content button:hover {
+      background: #0097a7;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    /* RESPONSIVENESS */
+    @media (max-width: 992px) {
+      .info-boxes {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      form {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      input, button {
+        width: 90%;
+        max-width: 400px;
+      }
+
+      .info-boxes {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header with Logo + Menu -->
   <header>
-    <div class="navbar">
+    <nav class="navbar">
       <div class="logo">
-        <img src="/images/Everest_Traders_logo_Art_Work.png" alt="Logo">
+        <img src="images/Everest_Traders_logo_Art_Work.png" alt="Logo">
       </div>
       <ul class="menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="about1.html">About</a></li>
-        <li><a href="product.html">Products</a></li>
-        <!-- <li><a href="projects.html">Projects</a></li> -->
+        <li><a href="Product.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </header>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section">
-    <div class="contact-left">
-      <h1>Contact us</h1>
-      <h2>Have a project?</h2>
+  <!-- Contact Section -->
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <p>Any questions or remarks? Just write us a message!</p>
+    <form id="contactForm">
+      <input type="email" id="email" placeholder="Enter a valid email address" required>
+      <input type="text" id="name" placeholder="Enter your Name" required>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
 
-      <div class="service-options">
-        <button type="button">Design</button>
-        <button type="button">Development</button>
-        <button type="button">Animation</button>
-        <button type="button">Other</button>
-      </div>
-
-      <form id="contactForm">
-        <div class="form-grid">
-          <input type="text" placeholder="Your name" required>
-          <input type="email" placeholder="Your email" required>
-        </div>
-        <textarea rows="5" placeholder="Project details"></textarea>
-        <button type="submit">Send request</button>
-      </form>
+  <!-- Info Boxes -->
+  <div class="info-boxes">
+    <div class="box">
+      <h3>ABOUT CLUB</h3>
+      <p>Running Guide<br>Workouts</p>
     </div>
-
-    <div class="contact-right">
-      <p>
-        Tell us about your vision: which challenges are you facing? What are your goals and expectations? 
-        What would success look like and how much are you planning to spend to get there?
-      </p>
-
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
+    <div class="box">
+      <h3>PHONE (LANDLINE)</h3>
+      <p>+912 3 567 8987<br>+912 5 252 3336</p>
     </div>
-  </section>
+    <div class="box">
+      <h3>OUR OFFICE LOCATION</h3>
+      <p>The Interior Design Studio Company<br>
+        The Courtyard, Al Quoz 1, Colorado, USA</p>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h2>✅ Thank You!</h2>
+      <p>Your request has been submitted successfully.</p>
+      <button onclick="closePopup()">Close</button>
+    </div>
+  </div>
 
   <script>
-    // Toggle active service button
-    const buttons = document.querySelectorAll(".service-options button");
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      });
-    });
+    const form = document.getElementById("contactForm");
+    const popup = document.getElementById("popup");
 
-    // Handle form submission
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
+    form.addEventListener("submit", function(e) {
       e.preventDefault();
-      alert("Thank you! Your request has been sent.");
-      this.reset();
-      buttons.forEach(b => b.classList.remove("active"));
+      popup.style.display = "flex"; 
     });
-  </script>
 
+    function closePopup() {
+      popup.style.display = "none";
+    }
+  </script>
 </body>
 </html>
