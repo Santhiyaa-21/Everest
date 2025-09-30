@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Website Header</title>
+  <title>Contact Us | Everest Interior & Door Distributor</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class = "home">
-
-  <!-- Header Section -->
+<body>
+    <!-- Header Section -->
   <header>
     <nav class="navbar">
       <div class="logo">
@@ -24,167 +23,58 @@
       </ul>
     </nav>
   </header>
-  <section class="banner">
-    <div class="banner-text">
-      <h1> Elevating your lifestyle through elegant design </h1>
-      <p>Transforming spaces into timeless interiors with creativity and precision</p>
-    <div class="button-container">
-    <a href="Product.html" class="btn">View More</a>
-  </div>
+
+  <section class="contact-page">
+    <h1>Contact Us</h1>
+    <p class="subtitle">We’d love to hear from you! Get in touch with Everest Interior & Door Distributor.</p>
+
+    <div class="contact-container">
+      
+      <!-- Left: Info -->
+      <div class="contact-info">
+  <h2>Get in Touch</h2>
+  <p><strong>Address:</strong> No. 1/300, Mahasakthi Nagar, 2nd Street, Ramanathapuram, Tamil Nadu - 623503</p>
+  <p><strong>Phone:</strong> +91 7448772244</p>
+  <p><strong>Email:</strong> admin@everesttradersramnad.com</p>
+</div>
+
+
+      <!-- Right: Form -->
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+    <form onsubmit="sendWhatsApp(); return false;">
+  <input type="text" id="name" placeholder="Your Name" required>
+  <input type="email" id="email" placeholder="Your Email" required>
+  <input type="text" id="subject" placeholder="Subject">
+  <textarea id="message" placeholder="Your Message" required></textarea>
+  <button type="submit">Send via WhatsApp</button>
+</form>
+</div>
+</div>
+
+<script>
+function sendWhatsApp() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let subject = document.getElementById("subject").value;
+  let message = document.getElementById("message").value;
+
+  let phone = "917448772244"; // Replace with your WhatsApp number
+  let text = `Hello, I am ${name} (${email}).%0ASubject: ${subject}%0AMessage: ${message}`;
+
+  let url = `https://wa.me/${phone}?text=${text}`;
+  window.open(url, "_blank");
+}
+</script>
+
+
+
+    <!-- Map -->
+    <div class="map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18..." 
+              width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </section>
-  <section class="brands-section">
-    <h2>Popular Brands</h2>
-
-    <div class="brands-grid">
-      <!-- Card 1 -->
-      <div class="brand-card">
-          <img src="images/mikasa.png" alt="Plywood Brands">
-        </a>
-        <!--<p>Plywood Brands</p>-->
-      </div>
-
-      <!-- Card 2 -->
-      <div class="brand-card">
-          <img src="images/century1.png" alt="Doors Brands">
-        </a>
-        <!--<p>Doors Brands</p>-->
-      </div>
-
-      <!-- Card 3 -->
-      <div class="brand-card">
-          <img src="images/kit.webp" alt="Laminate Brands">
-        </a>
-        <!--<p>Laminate Brands</p>-->
-      </div>
-
-      <!-- Card 4 -->
-      <div class="brand-card">
-        <a href="ceiling.html">
-          <img src="images/pop.ceiling.brsnd.jpg" alt="Pop Fal Ceiling">
-        </a>
-       <!---- <p>Pop Fal Ceiling</p>-->
-           </div>
-      <!-- Last Block with Link -->
-  
-    </div>
-  </section>
-  <section class="about-section">
-  <h2>About</h2>
-  <div class="about-container">
-
-    <!-- Left Image -->
-    <div class="about-image">
-      <img src="images/home.about.jpg" alt="About Everest Interior">
-    </div>
-
-    <!-- Right Text -->
-    <div class="about-content">
-      <p>
-        At <strong>Everest Interior</strong>, we bring you the finest range of interior solutions – 
-        from premium plywoods, designer doors, laminate sheets, louvers, fluters, POP false ceilings 
-        to stylish profiles. We deal with top brands and trusted materials to ensure durability, 
-        elegance, and value for money.
-      </p>
-      <a href="about1.html" class="about-btn">Click here</a>
-    </div>
-
-  </div>
-</section>
-<section class="explore-section">
-  <h2>More To Explore</h2>
-  <div class="explore-grid">
-
-    <div class="explore-item">
-      <img src="images/Hardwood.expore.jpg" alt="Hard Wood">
-      <p>Hard Wood</p>
-    </div>
-
-    <div class="explore-item">
-      <img src="images/water.proof.explore.jpg" alt="Semi Water Proof">
-      <p>Semi Water Proof</p>
-    </div>
-
-    <div class="explore-item">
-      <img src="images/diamond.explore.jpg" alt="Diamond Plywood">
-      <p>Diamond Plywood</p>
-    </div>
-
-    <div class="explore-item">
-      <img src="images/mdf.explore.jpg" alt="MDF Plywood">
-      <p>MDF Plywood</p>
-    </div>
-
-    <div class="explore-item">
-      <img src="images/laminate.sheet.explore.jpg" alt="Laminate Sheet">
-      <p>Laminate Sheet</p>
-    </div>
-
-    <!-- Last Block with Link -->
-    <a href="product.html" class="explore-item see-more">
-      <p>See More</p>
-    </a>
-
-  </div>
-<section class="testimonial-section">
-  <h2>Testimonial</h2>
-  <div class="testimonial-container">
-    
-    <!-- Testimonial 1 -->
-    <div class="testimonial">
-      <img src="user1.jpg" alt="Customer 1">
-      <h3>John Doe</h3>
-      <p>
-        Everest Interior provided us with top-quality products and excellent service. 
-        Their team was very professional and delivered exactly what we wanted.
-      </p>
-    </div>
-
-    <!-- Testimonial 2 -->
-    <div class="testimonial">
-      <img src="user2.jpg" alt="Customer 2">
-      <h3>Sarah Smith</h3>
-      <p>
-        I’m very happy with Everest Interior’s products. 
-        The quality of their doors and laminates is outstanding. Highly recommended!
-      </p>
-    </div>
-
-    <!-- Testimonial 3 -->
-    <div class="testimonial">
-      <img src="user3.jpg" alt="Customer 3">
-      <h3>Michael Lee</h3>
-      <p>
-        They guided us with the best choices and completed everything on time. 
-        Truly a trustworthy company for interiors.
-      </p>
-    </div>
-
-  </div>
-<section class="showcase">
-    <div class="box">
-      <i class="fas fa-users"></i>
-      <div class="count" data-target="5000">0</div>
-      <div class="label">Happy Customers</div>
-    </div>
-    <div class="box">
-      <i class="fas fa-trophy"></i>
-      <div class="count" data-target="100">0</div>
-      <div class="label">Awards Won</div>
-    </div>
-    <div class="box">
-      <i class="fas fa-gem"></i>
-      <div class="count" data-target="250">0</div>
-      <div class="label">Top Brands</div>
-    </div>
-    <div class="box">
-      <i class="fas fa-boxes-stacked"></i>
-      <div class="count" data-target="1500">0</div>
-      <div class="label">Our Collection</div>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
   <!-- WhatsApp Floating Button -->
 <style>
 /* --- Floating circular button --- */
@@ -216,13 +106,13 @@
     width:56px; height:56px;
   }
 }
-/*whats app button */
+
 /* small keyboard-focus style */
 .whatsapp-float:focus{ outline: 3px solid rgba(0,0,0,0.08); outline-offset: 3px; }
 </style>
 
 <a id="whatsappFloat" class="whatsapp-float"
-   href="https://wa.me/YOUR_NUMBER?text=Hello%20I%20need%20help"
+   href="https://wa.me/917448772244?text=Hello%20I%20need%20help"
    target="_blank" rel="noopener noreferrer"
    aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
   <!-- SVG WhatsApp icon (white) -->
@@ -250,7 +140,6 @@
   });
 })();
 </script>
-
 
 <!-- ===== Footer Section ===== -->
 <footer class="site-footer">
@@ -280,9 +169,11 @@
     <!-- Contact Info -->
     <div class="footer-contact">
       <h4>Contact Us</h4>
-      <p><strong>Address:</strong> 1/3000, Mahasakthi Nagar, 2nd Street, Ramanathapuram, Tamilnadu-623503</p>
+      <p><strong>Address:</strong> No. 1/300, Mahasakthi Nagar, 2nd Street,<br>
+       Ramanathapuram, Tamil Nadu - 623503</p>
       <p><strong>Phone:</strong> +91 7448772244</p>
       <p><strong>Email:</strong> admin@everesttradersramnad.com</p>
+
     </div>
 
     <!-- Social Media -->
@@ -298,7 +189,6 @@
     <p>© 2025 Everest Interiors & Doors Distributor. All Rights Reserved.</p>
   </div>
 </footer>
-
 
 </body>
 </html>

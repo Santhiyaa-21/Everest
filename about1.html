@@ -19,7 +19,7 @@
         <li><a href="about1.html" class="active">About</a></li>
         <li><a href="product.html">Products</a></li>
 <!-- <li><a href="projects.html">Projects</a></li> -->
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cont.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -121,6 +121,123 @@
       </div>
     </div>
   </section>
+  <!-- WhatsApp Floating Button -->
+<style>
+/* --- Floating circular button --- */
+.whatsapp-float{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 99999;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.whatsapp-float:hover{ transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.18); }
+.whatsapp-float svg{ width: 36px; height: 36px; display:block; }
+
+/* respect iPhone safe area */
+@media (max-width: 480px){
+  .whatsapp-float{
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    width:56px; height:56px;
+  }
+}
+
+/* small keyboard-focus style */
+.whatsapp-float:focus{ outline: 3px solid rgba(0,0,0,0.08); outline-offset: 3px; }
+</style>
+
+<a id="whatsappFloat" class="whatsapp-float"
+   href="https://wa.me/917448772244?text=Hello%20I%20need%20help"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Chat with us on WhatsApp" title="Chat with us on WhatsApp">
+  <!-- SVG WhatsApp icon (white) -->
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <path fill="#ffffff" d="M20.52 3.478A11.94 11.94 0 0012 .5 11.94 11.94 0 003.478 3.478 11.94 11.94 0 00.5 12c0 2.09.6 4.04 1.74 5.72L.5 23.5l5.06-1.31c1.66.9 3.49 1.36 5.44 1.36 6.62 0 12-5.38 12-12 0-1.95-.46-3.78-1.36-5.44zM12 21.5c-1.8 0-3.54-.46-5.05-1.32l-.36-.2L4 20.62l.5-2.88-.2-.36A8.44 8.44 0 013.5 12 8.5 8.5 0 1121 12 8.44 8.44 0 0112 21.5zM16.4 14.8c-.3-.2-1.76-.86-2.03-.96-.27-.1-.47-.15-.67.2-.2.35-.77.96-.94 1.16-.17.2-.34.23-.64.08-.3-.15-1.12-.41-2.13-1.31-.79-.74-1.32-1.66-1.48-1.96-.16-.3-.02-.46.12-.6.12-.12.3-.32.45-.49.15-.17.2-.3.3-.5.1-.2 0-.4-.02-.56-.02-.16-.67-1.6-.92-2.18-.24-.58-.49-.5-.67-.51-.17-.01-.36-.01-.55-.01-.18 0-.47.05-.72.35-.25.3-1.02 1-1.02 2.45 0 1.44 1.04 2.83 1.19 3.03.15.2 2.06 3.15 5 4.42 2.73 1.24 2.73.83 3.22.78.49-.04 1.59-.65 1.81-1.28.22-.63.22-1.16.15-1.28-.07-.12-.27-.2-.57-.4z"/>
+  </svg>
+</a>
+
+<script>
+/* Optional: set number & message dynamically and add simple click tracking for GA4 (if present) */
+/* Replace with your number (country code + number without + or spaces). Example: 919876543210 */
+(function(){
+  var phone = '917448772244';
+  var message = 'Hello!%20I%27d%20like%20help%20with%20your%20services.'; // URL-encoded or use encodeURIComponent below
+  // If you prefer to write plain text and encode automatically:
+  // var message = encodeURIComponent('Hello! I would like help with your services.');
+  var el = document.getElementById('whatsappFloat');
+  el.href = 'https://wa.me/' + phone + '?text=' + message;
+
+  el.addEventListener('click', function(){
+    try{
+      if(window.gtag) gtag('event','whatsapp_click',{ 'phone': phone });
+      if(window.dataLayer) window.dataLayer.push({event:'whatsapp_click', phone: phone});
+    }catch(e){}
+  });
+})();
+</script>
+
+  <!-- ===== Footer Section ===== -->
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Company Info -->
+    <div class="footer-about">
+      <h3>Everest Interiors & Doors Distributor</h3>
+      <p>
+        Bringing you premium quality doors, laminates, louvers, fluters, 
+        and POP ceiling solutions. Designed to last, built for style.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Products</a></li>
+        <!--<li><a href="services.html">Projects</a></li>-->
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <h4>Contact Us</h4>
+      <p><strong>Address:</strong> 1/3000, Mahasakthi Nagar, 2nd Street, Ramanathapuram, Tamilnadu-623503</p>
+      <p><strong>Phone:</strong> +91 7448772244</p>
+      <p><strong>Email:</strong> admin@everesttradersramnad.com</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
+      <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
+      <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Everest Interiors & Doors Distributor. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
 
 </body>
 </html>
